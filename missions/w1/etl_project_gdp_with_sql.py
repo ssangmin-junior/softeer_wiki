@@ -1,6 +1,4 @@
-PEP 8에 맞게 코드를 정리하고 한글 주석을 추가하였습니다.
 
-```python
 import os
 import sys
 import requests
@@ -137,4 +135,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
