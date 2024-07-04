@@ -49,7 +49,7 @@ conn.close()
 conn = sqlite3.connect(db_filename)
 cursor = conn.cursor()
 query = f"""
-SELECT * FROM {current_period}
+SELECT * FROM Gdp2024_2
 """
 
 df = pd.read_sql_query(query, conn)
