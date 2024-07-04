@@ -49,4 +49,4 @@ SELECT * FROM Gdp2024_2
 """
 ```
 
-→  https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/ETL/GDP_year.py
+https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/ETL/GDP_year.py
