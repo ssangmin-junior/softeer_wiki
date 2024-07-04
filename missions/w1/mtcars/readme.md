@@ -23,13 +23,10 @@ mtcars 데이터셋은 자동차의 성능과 사양에 대한 데이터를 포�
 ```
 
 # **변수들 간의 상관 관계가 높은 조합을 임의로 2개 선택해서 해당 데이터 간의 상관 관계를 그래프로 그리고 어떤 결론을 내릴 수 있는지를 토의하세요.**
-<img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/30353d95-e5b8-443a-916f-92f74fe98d67.png" width="200" height="400"/>
+<img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/30353d95-e5b8-443a-916f-92f74fe98d67.png" width="400" height="400"/><img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/dab4ddfd-7c30-42ae-86fb-b83dc439e12f.png" width="400" height="400"/>
 
-마력과 연비 (-0.78 음의 상관관계 )
+마력과 연비 (-0.78 음의 상관관계 )           중량과 상관관계 ( -0.87 음의 상관관계 )
 
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/dab4ddfd-7c30-42ae-86fb-b83dc439e12f)
-
-중량과 상관관계 ( -0.87 음의 상관관계 )
 
 ```markdown
 박상민
@@ -43,14 +40,11 @@ mtcars 데이터셋은 자동차의 성능과 사양에 대한 데이터를 포�
  또한, 환경 규제에 대응하기 위한 중요한 전략이 될 수 있음.cyl(실린더 수)와 disp(배기량)의 관계
 ```
 -------------------------------------------------------------------------
+<img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/05dceaa6-2223-48a7-bbb9-b3dda5b429ba.png" width="400" height="400"/><img src="[이미지주소](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/eae7e4d0-e8c2-4e13-8d11-090498fccec3).png" width="400" height="400"/>
 
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/05dceaa6-2223-48a7-bbb9-b3dda5b429ba)
+cyl(실린더 수)와 disp(배기량)의 양의 상관관계            disp(배기량)과 wt(무게)의 양의 상관관계
 
-cyl(실린더 수)와 disp(배기량)의 양의 상관관계
 
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/eae7e4d0-e8c2-4e13-8d11-090498fccec3)
-
-disp(배기량)과 wt(무게)의 양의 상관관계
 
 이용선
 ## 실린더와 배기량 : 0.90
@@ -62,9 +56,8 @@ disp(배기량)과 wt(무게)의 양의 상관관계
 차량이 무거울수록 더 많은 연료를 소비하므로 고성능차를 설계할 때 연비를 고려해야 함
 
 -------------------------------------------------------------------------
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/aee895ff-b3fe-4384-bf42-7a2c2c2f8862)
 
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/69de7b7c-3e31-4035-9177-d6a1fe15414a)
+<img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/aee895ff-b3fe-4384-bf42-7a2c2c2f8862.png" width="400" height="400"/><img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/69de7b7c-3e31-4035-9177-d6a1fe15414a.png" width="400" height="400"/>
 
 홍주원
 ## 실린더와 배기량의 상관관계
