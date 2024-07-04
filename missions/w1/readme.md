@@ -22,12 +22,13 @@ imf의 country,year 별 데이터를 스크랩 해와서 작업
 
 1. 갱신될때마다 반기별 테이블 생성  하여 과거의 테이블을 따로 정리.
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/eaadccbf-fa7b-4f0f-8726-0ed6710bfdda/55ac0fe9-5f7f-41ca-a987-3cfb353d254f/Untitled.png)
+![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/4d1b7807-ff6f-4e37-b72e-9ff68edd23e9)
+
     
 
 → 나라별 GDP 데이터가 큰 데이터는 아니기 때문에 갱신될 때 반기마다 테이블이 생성되도 자원 사용에 크게 영향이 없어 하나의 데이터베이스에서 여러 테이블을 만듦.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/eaadccbf-fa7b-4f0f-8726-0ed6710bfdda/ef7e3bab-c4cb-4d8d-9181-9c467da3d83f/Untitled.png)
+![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/995b47a6-ce05-4ff3-a7d0-bed1374f27ad)
 
 테이블 생성 할때 YEAR 컬럼 추가 (’2024-1’, ‘2024-2’ 형식)
 
@@ -39,7 +40,8 @@ imf의 country,year 별 데이터를 스크랩 해와서 작업
 
 테이블을 반기별로 생성하는 형식으로 했으므로 ETL 프로세스 변경없이 Analyze 부분에서 select문만 원하는 년도로 변경하면 된다.
 
-```python
+'''
+python
 conn = sqlite3.connect(db_filename)
 cursor = conn.cursor()
 query = f"""
