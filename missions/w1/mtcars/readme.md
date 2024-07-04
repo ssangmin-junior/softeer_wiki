@@ -23,7 +23,8 @@ mtcars 데이터셋은 자동차의 성능과 사양에 대한 데이터를 포�
 ```
 
 # **변수들 간의 상관 관계가 높은 조합을 임의로 2개 선택해서 해당 데이터 간의 상관 관계를 그래프로 그리고 어떤 결론을 내릴 수 있는지를 토의하세요.**
-![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/30353d95-e5b8-443a-916f-92f74fe98d67)
+<img src="https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/30353d95-e5b8-443a-916f-92f74fe98d67.png" width="200" height="400"/>
+
 마력과 연비 (-0.78 음의 상관관계 )
 
 ![image](https://github.com/ssangmin-junior/softeer_wiki/assets/108651531/dab4ddfd-7c30-42ae-86fb-b83dc439e12f)
