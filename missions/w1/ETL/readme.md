@@ -14,7 +14,7 @@ This repository is for organizing learning materials and week1'smissions.
 
 imf의 country,year 별 데이터를 스크랩 해와서 작업
 
-→ https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/etl_as_imf.ipynb
+→ https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/etl/etl_as_imf.ipynb
 
 **만약 데이터가 갱신되면 과거의 데이터는 어떻게 되어야 할까요? 과거의 데이터를 조회하는 게 필요하다면 ETL 프로세스를 어떻게 변경해야 할까요?**
 
@@ -49,4 +49,4 @@ SELECT * FROM Gdp2024_2
 """
 ```
 
-⇒https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/GDP_year.py
+[⇒https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/GDP_year.py](https://github.com/ssangmin-junior/softeer_wiki/blob/main/missions/w1/ETL/GDP_year.py)
