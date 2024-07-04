@@ -3,8 +3,11 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import re
 import json
 from datetime import datetime
+from IPython.display import display
+
 
 # 로그 기록 함수
 def log_progress(message, etl_path):
@@ -46,7 +49,6 @@ def extract(url, table_attribs, etl_path):
             gdp = float(gdp)
         except ValueError:
             continue
-
         data.append([country, gdp])
 
     # 데이터프레임 생성
@@ -55,12 +57,20 @@ def extract(url, table_attribs, etl_path):
     return df
 
 # 변환 (Transform) 함수
-def transform(df, etl_path):
+def transform(df, regions_path, etl_path):
     log_progress('데이터 변환 시작', etl_path)
     # GDP 값을 숫자로 변환
     df["GDP_USD_millions"] = df["GDP_USD_millions"].astype(float)
     df["GDP_USD_billions"] = df["GDP_USD_millions"].div(1000).round(2)  # 단위를 억 달러로 변환
     df.drop(columns=['GDP_USD_millions'], inplace=True)  # 원래 컬럼 삭제
+    regions=pd.read_csv(regions_path)
+    #df에 region 부여
+    df = pd.merge(df, regions, on='Country', how='left') 
+    top_5_mean = df.groupby('Region').apply(lambda x: x.nlargest(5, 'GDP_USD_billions')['GDP_USD_billions'].mean()).reset_index(name='Top5_Avg_GDP_USD_billions')
+    top_5_mean_sorted = top_5_mean.sort_values(by='Top5_Avg_GDP_USD_billions', ascending=False)
+    print('-' * 36)
+    print("각 Region별로 top5 국가의 GDP 평균")
+    print(top_5_mean_sorted)
     log_progress('데이터 변환 완료', etl_path)
     return df
 
@@ -87,6 +97,7 @@ def main():
         os.makedirs(etl_path)
 
     url = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)'
+    regions_path = '/Users/admin/Documents/GitHub/softeer_wiki/missions/w1/region.csv'
     table_attribs = ["Country", "GDP_USD_millions"]
     csv_path = os.path.join(etl_path, 'Countries_by_GDP.csv')
 
@@ -97,13 +108,18 @@ def main():
     load_gdp_data(df, etl_path)
 
     # 변환 단계
-    df = transform(df, etl_path)
-
-    # 로드 단계
+    df = transform(df, regions_path,etl_path)   
+     # 로드 단계
     load_to_csv(df, csv_path, etl_path)
-
+    print('-' * 36)
+    print("GDP가 100B USD 이상인 국가들")
+    log_progress("GDP가 100B USD 이상인 국가 출력",etl_path)
+    df_filtered = df[df["GDP_USD_billions"] >= 100]
+    df_filtered.index = df_filtered.index + 1   
+    print(df_filtered)
     log_progress('ETL 프로세스 완료', etl_path)
-    log_progress('------------------------------------------', etl_path)
+    log_progress('-' * 36, etl_path)
 
 if __name__ == "__main__":
     main()
+
