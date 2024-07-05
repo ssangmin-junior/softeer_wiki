@@ -68,13 +68,7 @@ def transform(df, regions_path, etl_path):
     regions = pd.read_csv(regions_path)
     df = pd.merge(df, regions, on='Country', how='left')
 
-    # 각 Region별로 top5 국가의 GDP 평균 계산
-    top_5_mean = df.groupby('Region').apply(lambda x: x.nlargest(5, 'GDP_USD_billions')['GDP_USD_billions'].mean()).reset_index(name='Top5_Avg_GDP_USD_billions')
-    top_5_mean_sorted = top_5_mean.sort_values(by='Top5_Avg_GDP_USD_billions', ascending=False)
 
-    print('-' * 36)
-    print("각 Region별로 top5 국가의 GDP 평균")
-    display(top_5_mean_sorted)
 
     log_progress('데이터 변환 완료', etl_path)
     return df
@@ -130,6 +124,14 @@ def etl_process():
     
     # 테이블 생성 및 데이터 삽입
     create_and_insert_table(df, db_name, table_name, etl_path)
+ 
+    # 각 Region별로 top5 국가의 GDP 평균 계산
+    top_5_mean = df.groupby('Region').apply(lambda x: x.nlargest(5, 'GDP_USD_billions')['GDP_USD_billions'].mean()).reset_index(name='Top5_Avg_GDP_USD_billions')
+    top_5_mean_sorted = top_5_mean.sort_values(by='Top5_Avg_GDP_USD_billions', ascending=False)
+
+    print('-' * 36)
+    print("각 Region별로 top5 국가의 GDP 평균")
+    display(top_5_mean_sorted)  
     
     print('-' * 36)
     print("GDP가 100B USD 이상인 국가들")
