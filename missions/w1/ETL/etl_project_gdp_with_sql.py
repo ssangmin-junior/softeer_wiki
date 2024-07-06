@@ -25,10 +25,6 @@ def extract(url, table_attribs, etl_path):
 
     # 적절한 테이블 선택
     table = soup.find('table', {'class': 'wikitable sortable sticky-header-multi static-row-numbers'})
-    if table is None:
-        log_progress("Wikipedia 페이지에서 테이블을 찾을 수 없음", etl_path)
-        raise ValueError("Wikipedia 페이지에서 테이블을 찾을 수 없음")
-
     # 테이블 모든 행 추출 
     rows = table.find_all('tr')
     data = []
@@ -37,17 +33,14 @@ def extract(url, table_attribs, etl_path):
     for row in rows[3:]:   
         cols = row.find_all('td')
         if len(cols) < 3:
-            continue
-            
+            continue  
         country = cols[0].text.strip()
         gdp_text = cols[1].text.strip()
         gdp = re.sub(r'\[.*?\]', '', gdp_text).replace(',', '')
-        
         try:
             gdp = float(gdp)
         except ValueError:
-            continue 
-
+            continue
         data.append([country, gdp])
 
     # 데이터프레임 생성
