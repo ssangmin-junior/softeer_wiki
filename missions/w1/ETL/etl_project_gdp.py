@@ -112,7 +112,7 @@ def main():
     print('-' * 36)
     print("각 Region별로 top5 국가의 GDP 평균")
     print(top_5_mean_sorted)
-    print('-' * 36)
+    print('-' * 36)-
     print("GDP가 100B USD 이상인 국가들")
     log_progress("GDP가 100B USD 이상인 국가 출력",etl_path)
     df_filtered = df[df["GDP_USD_billions"] >= 100]
@@ -124,3 +124,4 @@ def main():
 if __name__ == "__main__":
     main()
 
+ 
