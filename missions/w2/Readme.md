@@ -2,7 +2,7 @@
 
 ---
 
-[Sentiment Analysis(Team) : Blind](#Sentiment Analysis(Team))
+ [Sentiment Analysis(Team) : Blind](#Sentiment Analysis(Team))
 
 ## **문제정의**
 
