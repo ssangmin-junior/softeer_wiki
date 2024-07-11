@@ -1,5 +1,7 @@
 w2 m1~m4 미션은 /m1-m4/에 있음.
+
 word cloud의 작동 방법 - 어떤 로직으로 시각화가 이루어지는지는 /m5/에 있음.
+
 팀 활동 프로젝트는 /team/에 있음.
 
 ## Predicting Election Results from Twitter Using Machine Learning Algorithms
