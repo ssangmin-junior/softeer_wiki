@@ -2,7 +2,9 @@
 
 ---
 
- [Sentiment Analysis(Team) : Blind](#Sentiment-Analysis(Team))
+ [1. 문제정의 ](문제정의)
+ 
+# Sentiment Analysis(Team) : Blind
 
 ## **문제정의**
 
