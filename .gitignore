@@ -2,8 +2,8 @@
 schemas/
 static/
 themes/
+*.csv
 =======
-missions/
 >>>>>>> bc15037d8f7e7a55dffa5e2719df7e27ba34ee80
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks
@@ -98,7 +98,7 @@ docs/_build/
 
 # PyBuilder
 .pybuilder/
-target/
+target/f
 
 # Jupyter Notebook
 
